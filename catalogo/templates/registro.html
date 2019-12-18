@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{%block contenido %}
+
+<form method="post" class="form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn">Guardar</button>
+
+</form>
+
+{% endblock %}

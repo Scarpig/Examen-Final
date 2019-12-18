@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{%block contenido %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+<p>BIENVENIDO</p>
+
+<a href="{% url 'login' %}"> LOGIN</a>
+
+
+{% endblock %}

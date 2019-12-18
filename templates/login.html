@@ -1,0 +1,70 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{%block contenido %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="estilos.css" />
+  <title>jQuery Example</title>
+  <script>
+    $(document).ready(function() {
+      // Execute some code here
+    });
+  </script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=2262328720717911';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="container">
+	
+
+
+	<div class="row justify-content-center"> 
+	
+		<h3>Inicio de Sesión</h3>
+	</div>
+	<div class="d-flex justify-content-center">
+	<form method="post">
+	{% csrf_token %}
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xl-12">
+				<div class="form-group">
+					<label for="username">Usuario:</label>
+					<input class="form-control" type="text" name="username">
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xl-12">
+				<div class="form-group">
+					<label for="username">Contraseña:</label>
+					<input class="form-control" type="password" name="password">
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xl-12">
+				<div class="form-group">
+					<input class="btn btn-primary" type="submit" value="Ingresar">
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xl-12">
+				<div class="form-group">
+					<a href="{% url 'ascensor:registrar' %}">Registrar</a>
+				</div>	
+			</div>
+		</div>
+		<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+		
+
+	</form>
+	</div>
+	</div>
+{% endblock %}

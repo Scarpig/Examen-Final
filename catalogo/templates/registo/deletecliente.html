@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+{% block content %}
+
+<h1>Eliminar Cliente</h1>
+<p>¿estas seguro(a) que quieres eliminar al cliente {{ cliente}}</p> 
+
+<form actiom="" method ="POST">
+{% csrf_token %}
+<input type="submit" action="" value="Eliminar"/>
+</from>
+{% endblock %}
